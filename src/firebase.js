@@ -1,4 +1,4 @@
-// 🔄 Clear old console logs during development
+// src/firebase.js
 console.clear();
 
 import { firebaseConfig } from "./config";
@@ -27,17 +27,18 @@ const signup = async (name, email, password) => {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
 
-    // ➕ Add user to Firestore
     await addDoc(collection(db, "users"), {
       uid: user.uid,
       name,
       authProvider: "local",
       email,
     });
+
+    toast.success("Signup successful!");
   } catch (error) {
-    console.log(error);
+    console.error(error);
     toast.error(
-      error?.code?.split("/")[1]?.split("-")?.join(" ") || "Something went wrong"
+      error?.code?.split("/")[1]?.split("-")?.join(" ") || "Signup failed"
     );
   }
 };
@@ -46,10 +47,11 @@ const signup = async (name, email, password) => {
 const login = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    toast.success("Login successful!");
   } catch (error) {
-    console.log(error);
+    console.error(error);
     toast.error(
-      error?.code?.split("/")[1]?.split("-")?.join(" ") || "Something went wrong"
+      error?.code?.split("/")[1]?.split("-")?.join(" ") || "Login failed"
     );
   }
 };
@@ -57,6 +59,7 @@ const login = async (email, password) => {
 // 🚪 Logout function
 const logout = () => {
   signOut(auth);
+  toast.info("Logged out");
 };
 
 export { auth, db, login, signup, logout };

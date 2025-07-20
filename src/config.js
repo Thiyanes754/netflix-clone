@@ -1,5 +1,3 @@
-// replace below firebase config with your own
-
 const firebaseConfig = {
   apiKey: "AIzaSyDgIVv78NZOaGll_0bJXjAKh5DAQQWlhoU",
   authDomain: "netflix-clone-30144.firebaseapp.com",
@@ -10,12 +8,6 @@ const firebaseConfig = {
   measurementId: "G-CGV4WNL26N"
 };
 
+const TMDB_Access_Key = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMmFlODk0NWNlMGFiMWZjNGFiMThjYzkxY2ZjYzg3OCIsIm5iZiI6MTc1Mjg0NjAwOS4wNTc5OTk4LCJzdWIiOiI2ODdhNGViOTRkNzdhMDQ4ZTQzOGNiZjYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ay6aYZ_Pifr3ENju2kOcxZTruQnVcX0J_qZyR5Eux8s";
 
-
-// craete a/c on themoviedb.org and replace access token below
-
-
-const TMDB_Access_Key="eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMmFlODk0NWNlMGFiMWZjNGFiMThjYzkxY2ZjYzg3OCIsIm5iZiI6MTc1Mjg0NjAwOS4wNTc5OTk4LCJzdWIiOiI2ODdhNGViOTRkNzdhMDQ4ZTQzOGNiZjYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ay6aYZ_Pifr3ENju2kOcxZTruQnVcX0J_qZyR5Eux8s";
-
-
-  export {firebaseConfig, TMDB_Access_Key};
+export { firebaseConfig, TMDB_Access_Key };
